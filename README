@@ -1,0 +1,6 @@
+Steps to Initialize Project (Web Application)
+
+1) npx create-react-app prevenza-web --legacy-peer-deps
+
+2) npm install -D tailwindcss postcss autoprefixer
+   npx tailwindcss init
