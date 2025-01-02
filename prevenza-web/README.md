@@ -75,3 +75,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 npm install -D tailwindcss
 npx tailwindcss init
+
+npm install react-router-dom
