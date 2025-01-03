@@ -23,7 +23,7 @@ const Login = () => {
     const Header = ({ heading, paragraph, linkName, linkUrl }) => (
         <div className="mb-6">
             <div className="flex justify-center">
-                <img alt="Cummins Logo" className="h-14 w-14" src="./cummins_logo.png" />
+                <img alt="Prevenza_Logo" className="h-28 w-28 rounded-full object-cover" src="./Prevenza_Logo.png" />
             </div>
             <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
                 {heading}

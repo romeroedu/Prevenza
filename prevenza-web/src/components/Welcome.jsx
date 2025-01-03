@@ -1,79 +1,137 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+import { FaApple, FaGooglePlay } from "react-icons/fa";
+import { MdOutlineHealthAndSafety, MdTipsAndUpdates } from "react-icons/md";
+import { BsGraphUp } from "react-icons/bs";
 
 const Welcome = () => {
   return (
-    <div className="flex flex-col">
-      {/* Main Content Section */}
-      <main className="flex-grow">
-        {/* Hero Section */}
-        <section className="bg-gray-100 pt-32 py-10">
-          <div className="container mx-auto text-center">
-            <h1 className="text-4xl font-bold mb-4">Welcome to Prevenza</h1>
-            <p className="text-lg text-gray-700 mb-8">
-            Empowering Your Health, Preventing Tomorrow's Risks 
-            </p>
-            <Link to="/signup" className="bg-sky-900 text-white px-6 py-2 rounded-full">Get Started</Link>
+    <div className="relative">
+      {/* Background Image */}
+      <div
+        className="h-screen absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage: `url('./healthy_people_image.jpg')`,
+          zIndex: -1,
+        }}
+      />
+
+      {/* Hero Section */}
+      <section className="flex flex-col items-center justify-center h-screen text-center text-white bg-opacity-50 bg-gray-800 px-4 sm:px-8">
+        <h1 className="text-3xl sm:text-4xl md:text-7xl font-bold mb-20">
+          Empowering Your Health, <br className="hidden sm:block" /> Preventing Tomorrow's Risks
+        </h1>
+        <div className="flex flex-wrap justify-center space-x-0 sm:space-x-4 space-y-4 sm:space-y-0 mb-7">
+          <Link
+            to="/symptom-assessment"
+            className="bg-sky-900 hover:bg-sky-700 text-white px-6 py-3 rounded-full text-sm sm:text-lg"
+          >
+            Symptom Assessment
+          </Link>
+          <Link
+            to="/health-tips"
+            className="bg-sky-900 hover:bg-sky-700 text-white px-6 py-3 rounded-full text-sm sm:text-lg"
+          >
+            Health Tips
+          </Link>
+        </div>
+      </section>
+
+      {/* About Us Section */}
+      <section className="py-10 bg-gray-100 px-4 sm:px-8">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-4">About Prevenza</h2>
+          <p className="text-gray-700 mb-8">
+            At Prevenza, we aim to empower individuals by providing accurate and
+            accessible health insights. Our mission is to make health
+            management simple and effective for everyone.
+          </p>
+          <Link
+            to="/about"
+            className="bg-sky-800 hover:bg-sky-700 text-white px-6 py-3 rounded-full"
+          >
+            Learn More
+          </Link>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-10 bg-gray-100 px-4 sm:px-8">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-8">Our Features</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="p-6 bg-white shadow-md rounded">
+              <MdOutlineHealthAndSafety className="text-sky-900 text-4xl mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-2">Symptom Checker</h3>
+              <p>Quickly check symptoms and get tailored health insights.</p>
+            </div>
+            <div className="p-6 bg-white shadow-md rounded">
+              <MdTipsAndUpdates className="text-sky-900 text-4xl mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-2">Daily Health Tips</h3>
+              <p>Stay informed with actionable tips to improve your well-being.</p>
+            </div>
+            <div className="p-6 bg-white shadow-md rounded">
+              <BsGraphUp className="text-sky-900 text-4xl mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-2">Health Tracking</h3>
+              <p>Track fitness, weight, and medical history to stay on top of your health.</p>
+            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Features Section */}
-        {/* <section className="py-10 bg-red-400">
-          <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-96 h-96 mx-auto mb-4 flex items-center justify-center rounded-full">
-                <img src={"./images/welcome_1.webp"} alt="Assist Employees" className="w-full h-full object-contain"/>
-              </div>
-              <h2 className="text-2xl font-bold mb-2">Assist Employees</h2>
-              <p className="text-gray-700">Provide a convenient commute option for employees without vehicles.</p>
+      {/* Testimonials Section */}
+      <section className="py-10 bg-gray-100 px-4 sm:px-8">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-8">What Our Users Say</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="p-6 bg-white shadow-md rounded">
+              <p className="text-gray-700 italic">
+                “This app helped me identify a condition I didn’t know I had.
+                Thank you for this lifesaving tool!”
+              </p>
+              <p className="mt-4 font-semibold text-gray-900">- User A</p>
             </div>
-            <div className="text-center">
-              <div className="w-96 h-96 mx-auto mb-4 flex items-center justify-center rounded-full">
-                <img src={"./images/welcome_2.webp"} alt="Enhance Collaboration" className="w-full h-full object-contain"/>
-              </div>
-              <h2 className="text-2xl font-bold mb-2">Enhance Collaboration</h2>
-              <p className="text-gray-700">Strengthen relationships and collaboration among colleagues.</p>
+            <div className="p-6 bg-white shadow-md rounded">
+              <p className="text-gray-700 italic">
+                “Easy to use and surprisingly accurate. It gave me peace of mind
+                and directed me to the right care.”
+              </p>
+              <p className="mt-4 font-semibold text-gray-900">- User B</p>
             </div>
-            <div className="text-center">
-              <div className="w-96 h-96 mx-auto mb-4 flex items-center justify-center rounded-full">
-                <img src={"./images/welcome_3.webp"} alt="Reduce Emissions" className="w-full h-full object-contain"/>
-              </div>
-              <h2 className="text-2xl font-bold mb-2">Reduce Emissions</h2>
-              <p className="text-gray-700">Contribute to a greener planet by reducing gas emissions.</p>
+            <div className="p-6 bg-white shadow-md rounded">
+              <p className="text-gray-700 italic">
+                “The health tips and symptom checker are fantastic. Highly
+                recommend this app!”
+              </p>
+              <p className="mt-4 font-semibold text-gray-900">- User C</p>
             </div>
           </div>
-        </section> */}
+        </div>
+      </section>
 
-
-        <section id="features" className="py-16 bg-gray-100">
-            <div className="container mx-auto px-4 text-center">
-                <h3 className="text-3xl font-bold mb-6">Features</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="p-6 bg-white shadow-md rounded">
-                    <h4 className="text-xl font-semibold mb-2">Daily Health Tips</h4>
-                    <p>Receive personalized tips to stay healthy every day.</p>
-                </div>
-                <div className="p-6 bg-white shadow-md rounded">
-                    <h4 className="text-xl font-semibold mb-2">Symptom Checker</h4>
-                    <p>Check symptoms and get tailored recommendations.</p>
-                </div>
-                <div className="p-6 bg-white shadow-md rounded">
-                    <h4 className="text-xl font-semibold mb-2">Health Tracking</h4>
-                    <p>Track your fitness, weight, and medical history.</p>
-                </div>
-                </div>
-            </div>
-        </section>
-
-        {/* About Us Section */}
-        <section className="bg-gray-200 py-10">
-          <div className="container mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4">About Us</h2>
-            <p className="text-lg text-gray-700 mb-8">Learn more about our mission and values.</p>
-            <Link to="/about" className="bg-sky-900 text-white px-6 py-2 rounded-full">Read More</Link>
-          </div>
-        </section>
-      </main>
+      {/* App Store Links Section */}
+      <section className="py-16 bg-gray-100 text-center">
+        <h2 className="text-3xl font-bold mb-4 text-gray-800">
+          Ready to Take Control of Your Health?
+        </h2>
+        <p className="mb-8 text-gray-800">
+          Download Prevenza today and start your journey to better health.
+        </p>
+        <div className="flex justify-center space-x-4">
+          <a
+            href="#"
+            className="bg-black px-6 py-3 rounded-full hover:bg-gray-800 flex items-center text-white"
+          >
+            <FaApple className="mr-2" /> App Store
+          </a>
+          <a
+            href="#"
+            className="bg-black px-6 py-3 rounded-full hover:bg-gray-800 flex items-center text-white"
+          >
+            <FaGooglePlay className="mr-2" /> Google Play
+          </a>
+        </div>
+      </section>
     </div>
   );
 };
